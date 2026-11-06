@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Fahrzeugstatus für Kunden: Ihre Entscheidungen, Autohaus Frisch</title>
+<meta name="description" content="Entscheidungsseite für die Kundenplattform Fahrzeugstatus: 3D-Modell, Schadensdarstellung, Statusstufen, Live-Updates, Kommunikationsweg und Gestaltung.">
+<link rel="icon" href="img/dail-mark-black.png">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img class="frisch" src="img/autohaus-frisch-logo.webp" alt="Autohaus Frisch">
+    <span class="brand-rule"></span>
+    <img class="dail" src="img/dail-mark-black.png" alt="DaiL">
+  </div>
+  <div class="header-meta">
+    <span>Kundenplattform Fahrzeugstatus</span>
+    <span>Entscheidungsseite</span>
+    <span>Stand 06.11.2026</span>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Abschnitte">
+  <div class="subnav-inner">
+    <a href="#vorschau" data-nav="vorschau">Vorschau</a>
+    <a href="#modell" data-nav="modell">1 · 3D-Modell</a>
+    <a href="#schaden" data-nav="schaden">2 · Schaden</a>
+    <a href="#status" data-nav="status">3 · Status</a>
+    <a href="#live" data-nav="live">4 · Live-Updates</a>
+    <a href="#kanal" data-nav="kanal">5 · Kommunikation</a>
+    <a href="#design" data-nav="design">6 · Gestaltung</a>
+    <a href="#zusammenfassung" data-nav="zusammenfassung">Auswahl senden</a>
+    <i id="nav-stand">0 von 6 entschieden</i>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="kicker"><span></span>Autohaus Frisch · DaiL · Kundenplattform Fahrzeugstatus</p>
+  <h1>Was Ihre Kunden über ihr <em>Fahrzeug</em> sehen sollen</h1>
+  <p class="hero-lede">Jeder Kunde bekommt einen persönlichen Link: sein Auto als drehbares 3D-Modell, der Stand der Reparatur aus dem DA und Hinweise, sobald sich etwas tut. Bevor wir das bauen, brauchen wir Ihre Entscheidungen zu sechs Punkten.</p>
+  <p class="hero-stand">So funktioniert diese Seite: Oben rechts sehen Sie das Handy eines Beispielkunden. Jede Auswahl unten verändert diese Vorschau sofort. Zu jedem Punkt gibt es Kommentarfelder für alles, was die Auswahl nicht abdeckt. Am Ende steht Ihre Auswahl als Text zum Kopieren oder als E-Mail an uns. Ihre Eingaben bleiben in diesem Browser gespeichert, Sie können jederzeit unterbrechen.</p>
+  <div class="hero-facts">
+    <span><b>255</b>Fahrzeuge aktuell im Haus (DA, 06.11.)</span>
+    <span><b>31</b>interne DA-Status im Einsatz</span>
+    <span><b>18</b>3D-Modelle im Test erzeugt</span>
+    <span><b>6</b>Entscheidungen</span>
+  </div>
+</section>
+
+<section class="section" id="vorschau">
+  <div class="section-heading">
+    <div>
+      <span class="nr">Vorschau</span>
+      <h2>Das Handy des Kunden</h2>
+    </div>
+    <div>
+      <p class="frage">Ein Beispielfall: Skoda Kamiq, Parkschaden vorne rechts, Fahrzeug seit drei Tagen im Haus.</p>
+      <p>Die Daten im Beispiel sind nachgebildet. Fahrzeugtyp, Statusfolge und Notizen entsprechen echten Vorgängen aus Ihrem DA, Name und Kennzeichen sind erfunden. Alles, was Sie unten entscheiden, wird hier sofort sichtbar. Scrollen Sie innerhalb des Handys, um die ganze Kundenseite zu sehen.</p>
+    </div>
+  </div>
+</section>
+
+<div class="vorschau-bereich" id="hauptbereich">
+<div id="entscheidungen">
+
+<section class="section" id="modell">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 1 von 6</span><h2>Das 3D-Modell des Kundenfahrzeugs</h2></div>
+    <div>
+      <p class="frage">Wie soll das Auto des Kunden auf seiner Seite erscheinen?</p>
+      <p>Wir haben für acht Modelle aus Ihrem Bestand je ein Referenzbild erzeugt und daraus mit drei verschiedenen Bild-zu-3D-Verfahren Modelle gerechnet. Alle drehen sich, lassen sich mit dem Finger drehen und zoomen. Wählen Sie das Verfahren, dessen Ergebnis Ihnen am besten gefällt. Mit den Knöpfen wechseln Sie das Fahrzeug.</p>
+      <p class="fact">Kosten je Modell: Tripo 9 Credits, Hunyuan 11, Meshy 38 (Higgsfield). Rechenzeit 2 bis 4 Minuten. Ein Modell wird je Marke und Modellreihe einmal erzeugt und dann für alle Kunden mit diesem Fahrzeug wiederverwendet. Die Fahrzeugfarbe steht nicht im DA, dazu Frage 1c.</p>
+    </div>
+  </div>
+
+  <div class="galerie-steuer" id="galerie-autos"><span class="lbl">Fahrzeug</span></div>
+  <div class="galerie" id="galerie"></div>
+
+  <div class="tabelle-scroll">
+  <table class="hinweis-tabelle">
+    <thead><tr><th>Verfahren</th><th>Stärke</th><th>Schwäche</th><th>Datei je Modell</th><th>Credits</th></tr></thead>
+    <tbody>
+      <tr><td>Tripo H3.1</td><td>Schärfste Kanten, einheitliche Ausrichtung, Marken-Details (Grill, Leuchten) stimmen</td><td>Lack wirkt dunkler als die Vorlage</td><td class="zahl">5,6 bis 6,0 MB</td><td class="zahl">9</td></tr>
+      <tr><td>Hunyuan3D v3</td><td>Gute Form, kleinste Datei, schnell geladen auf dem Handy</td><td>Textur stellenweise fleckig (Dach, Heck)</td><td class="zahl">2,3 bis 2,5 MB</td><td class="zahl">11</td></tr>
+      <tr><td>Meshy 7</td><td>Glatte Oberfläche</td><td>Weniger Details, viermal so teuer, nur zwei Fahrzeuge getestet</td><td class="zahl">1,4 bis 2,1 MB</td><td class="zahl">38</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="frage-block" style="margin-top:32px">
+    <h3>1a · Verfahren</h3>
+    <p>Welches Verfahren soll für alle Fahrzeuge verwendet werden?</p>
+    <div class="optionen" data-frage="modell_verfahren"></div>
+  </div>
+  <div class="frage-block">
+    <h3>1b · Darstellung auf der Kundenseite</h3>
+    <p>Wie soll das Modell gezeigt werden?</p>
+    <div class="optionen" data-frage="modell_darstellung"></div>
+  </div>
+  <div class="frage-block">
+    <h3>1c · Fahrzeugfarbe</h3>
+    <p>Das DA kennt die Lackfarbe nicht. Drei Wege, trotzdem das richtige Auto zu zeigen.</p>
+    <div class="optionen" data-frage="modell_farbe"></div>
+  </div>
+  <div class="frage-block">
+    <h3>1d · Fahrzeuge ohne Modell</h3>
+    <p>Seltene Modelle oder Fahrzeuge, bei denen die DA-Bezeichnung unklar ist (zum Beispiel nur "Sprinter").</p>
+    <div class="optionen" data-frage="modell_fallback"></div>
+  </div>
+  <div class="kommentar"><label for="k_modell">Ihre Anmerkung zu Entscheidung 1</label><textarea id="k_modell" data-kommentar="modell" placeholder="Zum Beispiel: Für Nutzfahrzeuge reicht ein Standardmodell."></textarea></div>
+</section>
+
+<section class="section" id="schaden">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 2 von 6</span><h2>Schäden und Arbeiten am Fahrzeug</h2></div>
+    <div>
+      <p class="frage">Soll der Kunde sehen, welche Teile betroffen sind, und wie?</p>
+      <p>Die Schadenlogik aus dem Hackathon liest die DA-Notizen und ordnet jede Beschreibung einem von zwölf Karosserieteilen zu (Stoßstange, Kotflügel, Tür, Schweller, Spiegel, Dach, Heckklappe, Scheibe), mit Seite, Schadensart und Schweregrad. Die Regeln entscheiden dann, was ersetzt, instandgesetzt oder lackiert wird. Für Mechanikaufträge (Inspektion, Reifen, Bremsen) gibt es keine Zonen, sondern Arbeitspositionen.</p>
+      <p class="fact">Im Test mit 977 Vorgängen wurden die betroffenen Zonen in 99,9 % der Fälle richtig erkannt. Beim Schweregrad (leicht, mittel, schwer) lag die Trefferquote bei 69 %, weil die Notizen ihn selten eindeutig nennen.</p>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>2a · Darstellung der Schadenstellen</h3>
+    <div class="optionen" data-frage="schaden_darstellung"></div>
+  </div>
+  <div class="frage-block">
+    <h3>2b · Schweregrad</h3>
+    <p>Soll der Kunde die Einstufung leicht, mittel, schwer sehen?</p>
+    <div class="optionen" data-frage="schaden_schwere"></div>
+  </div>
+  <div class="frage-block">
+    <h3>2c · Arbeiten und Teile</h3>
+    <p>Was soll der Kunde über die Reparatur selbst erfahren?</p>
+    <div class="optionen" data-frage="schaden_arbeiten"></div>
+  </div>
+  <div class="frage-block">
+    <h3>2d · Sprache</h3>
+    <div class="optionen" data-frage="schaden_sprache"></div>
+  </div>
+  <div class="kommentar"><label for="k_schaden">Ihre Anmerkung zu Entscheidung 2</label><textarea id="k_schaden" data-kommentar="schaden" placeholder="Zum Beispiel: Bei Versicherungsfällen keine Teileliste zeigen."></textarea></div>
+</section>
+
+<section class="section" id="status">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 3 von 6</span><h2>Vom DA-Status zur Kundenstufe</h2></div>
+    <div>
+      <p class="frage">Welche Ihrer 31 internen Status soll der Kunde sehen, und unter welchem Namen?</p>
+      <p>Ihre DA-Status sind interne Arbeitsanweisungen ("Mech/Reifen Anfrage KV erstellen", "Antwort Versicherer/GA/Leasing/Kunde fehlt"). Der Kunde braucht weniger und klarere Stufen. Unten steht unser Vorschlag: jeder interne Status wird einer Kundenstufe zugeordnet oder bleibt verborgen. Sie können jede Zuordnung ändern und die Kundentexte umschreiben. Die Zahlen rechts zeigen, wie viele offene Vorgänge heute in diesem Status stehen.</p>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>3a · Anzahl der Kundenstufen</h3>
+    <div class="optionen schmal" data-frage="status_stufen"></div>
+  </div>
+  <div class="frage-block">
+    <h3>3b · Zuordnung</h3>
+    <p>Links der interne Status, rechts die Kundenstufe. "Verborgen" heißt: dieser Statuswechsel löst keine Änderung auf der Kundenseite aus.</p>
+    <div class="stufen-leiste" id="stufen-leiste"></div>
+    <div class="tabelle-scroll">
+      <table class="zuordnung" id="zuordnung">
+        <thead><tr><th>Interner DA-Status</th><th class="zahl">Offen</th><th>Kundenstufe</th><th>Text auf der Kundenseite</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>3c · Wartezeiten auf Dritte</h3>
+    <p>Bei "Warte auf Freigabe" oder "Antwort Versicherer fehlt" liegt der Ball nicht bei Ihnen. Soll der Kunde das erfahren?</p>
+    <div class="optionen" data-frage="status_dritte"></div>
+  </div>
+  <div class="frage-block">
+    <h3>3d · Voraussichtliche Fertigstellung</h3>
+    <div class="optionen" data-frage="status_eta"></div>
+  </div>
+  <div class="kommentar"><label for="k_status">Ihre Anmerkung zu Entscheidung 3</label><textarea id="k_status" data-kommentar="status" placeholder="Zum Beispiel: Folgetermine getrennt anzeigen."></textarea></div>
+</section>
+
+<section class="section" id="live">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 4 von 6</span><h2>Live-Updates</h2></div>
+    <div>
+      <p class="frage">Wann soll der Kunde eine Nachricht bekommen, und was steht drin?</p>
+      <p>Die Spark liest das DA alle fünf Minuten. Jeder Statuswechsel, jede neue Notiz, jede Terminänderung und jede Teilelieferung ist als Ereignis bekannt. Aus den Notizen erzeugt der Notizen-Agent bereits heute eine Kundenzusammenfassung in verständlicher Sprache. Die Frage ist, welche Ereignisse eine Nachricht wert sind und wie oft der Kunde etwas hören will.</p>
+      <p class="fact">Heute laufen in Ihrem DA 7 Workflows, die SMS verschicken (Auftragseingang, Vorabcheck, Hagel, Kunde nicht erreicht), und 30, die E-Mails senden. Die Kundenseite ergänzt das, sie ersetzt es nicht.</p>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>4a · Ereignisse, die eine Nachricht auslösen</h3>
+    <p>Mehrfachauswahl.</p>
+    <div class="optionen" data-frage="live_ereignisse" data-multi="1"></div>
+  </div>
+  <div class="frage-block">
+    <h3>4b · Takt</h3>
+    <div class="optionen" data-frage="live_takt"></div>
+  </div>
+  <div class="frage-block">
+    <h3>4c · Was auf der Seite zu sehen ist</h3>
+    <p>Mehrfachauswahl.</p>
+    <div class="optionen" data-frage="live_anzeige" data-multi="1"></div>
+  </div>
+  <div class="frage-block">
+    <h3>4d · Kundenzusammenfassung aus den Notizen</h3>
+    <p>Beispiel aus einem echten Vorgang (BMW i4, diese Woche): "Wir haben Ihnen den Kostenvoranschlag für die anstehenden Arbeiten und die benötigten Winterreifen zugesendet. Bitte prüfen Sie die Unterlagen und erteilen Sie uns die Freigabe, damit wir mit der Reparatur beginnen können."</p>
+    <div class="optionen" data-frage="live_zusammenfassung"></div>
+  </div>
+  <div class="kommentar"><label for="k_live">Ihre Anmerkung zu Entscheidung 4</label><textarea id="k_live" data-kommentar="live" placeholder="Zum Beispiel: Keine Nachrichten am Wochenende."></textarea></div>
+</section>
+
+<section class="section" id="kanal">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 5 von 6</span><h2>Kommunikationsweg</h2></div>
+    <div>
+      <p class="frage">Wie bekommt der Kunde seinen Link, und wie meldet er sich zurück?</p>
+      <p>Der Link ist persönlich und gilt nur für diesen Vorgang. Er wird aus dem DA-Workflow heraus verschickt, so wie heute schon die SMS zum Auftragseingang. Für die DSGVO braucht es eine kurze Information im ersten Text und einen Weg, den Dienst abzubestellen.</p>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>5a · Kanal</h3>
+    <p>Mehrfachauswahl. Der erste gewählte Kanal ist der Hauptweg.</p>
+    <div class="optionen" data-frage="kanal_weg" data-multi="1"></div>
+  </div>
+  <div class="frage-block">
+    <h3>5b · Absender</h3>
+    <div class="optionen" data-frage="kanal_absender"></div>
+  </div>
+  <div class="frage-block">
+    <h3>5c · Zugangsschutz</h3>
+    <p>Wer den Link hat, sieht Fahrzeug, Kennzeichen und Status. Wie stark soll das abgesichert sein?</p>
+    <div class="optionen" data-frage="kanal_schutz"></div>
+  </div>
+  <div class="frage-block">
+    <h3>5d · Rückkanal</h3>
+    <p>Was kann der Kunde von seiner Seite aus tun?</p>
+    <div class="optionen" data-frage="kanal_rueck"></div>
+  </div>
+  <div class="frage-block">
+    <h3>5e · Erste Nachricht</h3>
+    <p>Der Text, mit dem der Link ankommt. Drei Tonlagen zur Auswahl, der Text lässt sich später anpassen.</p>
+    <div class="optionen" data-frage="kanal_text"></div>
+  </div>
+  <div class="kommentar"><label for="k_kanal">Ihre Anmerkung zu Entscheidung 5</label><textarea id="k_kanal" data-kommentar="kanal" placeholder="Zum Beispiel: Firmenkunden bekommen den Link per E-Mail an den Fuhrpark."></textarea></div>
+</section>
+
+<section class="section" id="design">
+  <div class="section-heading">
+    <div><span class="nr">Entscheidung 6 von 6</span><h2>Gestaltung der Kundenseite</h2></div>
+    <div>
+      <p class="frage">Wie soll die Seite aussehen, damit sie als Autohaus Frisch erkannt wird?</p>
+      <p>Alle Varianten tragen Ihr Logo. Unterschiedlich sind Farbwelt, Anordnung und die Art, wie der Fortschritt gezeigt wird. Probieren Sie die Kombinationen in der Vorschau aus.</p>
+    </div>
+  </div>
+  <div class="frage-block">
+    <h3>6a · Farbwelt</h3>
+    <div class="optionen schmal" data-frage="design_thema"></div>
+  </div>
+  <div class="frage-block">
+    <h3>6b · Anordnung</h3>
+    <div class="optionen" data-frage="design_layout"></div>
+  </div>
+  <div class="frage-block">
+    <h3>6c · Fortschrittsanzeige</h3>
+    <div class="optionen schmal" data-frage="design_fortschritt"></div>
+  </div>
+  <div class="frage-block">
+    <h3>6d · Schrift</h3>
+    <div class="optionen schmal" data-frage="design_schrift"></div>
+  </div>
+  <div class="frage-block">
+    <h3>6e · Serviceberater</h3>
+    <div class="optionen" data-frage="design_sb"></div>
+  </div>
+  <div class="kommentar"><label for="k_design">Ihre Anmerkung zu Entscheidung 6</label><textarea id="k_design" data-kommentar="design" placeholder="Zum Beispiel: Logo größer, Hausfarbe Rot nur sparsam."></textarea></div>
+</section>
+
+</div><!-- /entscheidungen -->
+
+<aside class="vorschau-sticky" aria-label="Vorschau der Kundenseite">
+  <p class="lbl"><span>Vorschau Kundenseite</span><span id="vorschau-kanal-lbl">Link per SMS</span></p>
+  <div class="handy">
+    <div class="screen" id="screen" data-thema="frisch" data-schrift="haus">
+      <div class="notch"><i></i></div>
+      <div id="k-inhalt"></div>
+    </div>
+  </div>
+</aside>
+</div><!-- /vorschau-bereich -->
+
+<section class="section" id="zusammenfassung">
+  <div class="section-heading">
+    <div><span class="nr">Abschluss</span><h2>Ihre Auswahl</h2></div>
+    <div>
+      <p class="frage">Alles, was Sie oben entschieden haben, steht hier als Text.</p>
+      <p>Kopieren Sie den Text in eine E-Mail an uns, oder nutzen Sie den E-Mail-Knopf. Offene Punkte sind markiert. Sie können die Seite später wieder öffnen, Ihre Auswahl bleibt in diesem Browser erhalten.</p>
+    </div>
+  </div>
+  <div class="zusammenfassung">
+    <div>
+      <div class="fortschritt"><span id="fortschritt-text">0 von 6 Entscheidungen</span><i><b id="fortschritt-balken"></b></i></div>
+      <pre id="zusammenfassung-text"></pre>
+    </div>
+    <div>
+      <div class="feld"><label for="name">Ihr Name</label><input id="name" type="text" placeholder="Werner Frisch" autocomplete="name"></div>
+      <div class="kommentar"><label for="k_allgemein">Was sonst noch wichtig ist</label><textarea id="k_allgemein" data-kommentar="allgemein" placeholder="Alles, was keine der sechs Fragen abdeckt."></textarea></div>
+      <div class="aktionen">
+        <button class="btn" id="btn-mail" type="button">Auswahl per E-Mail senden</button>
+        <button class="btn zweit" id="btn-kopieren" type="button">Text kopieren</button>
+        <button class="btn zweit" id="btn-reset" type="button">Auf Vorschlag zurücksetzen</button>
+      </div>
+      <p class="status-zeile" id="status-zeile"></p>
+      <p class="fact">Die E-Mail geht an y.bekri@dail.info. Es wird nichts automatisch übertragen: Ihr Mailprogramm öffnet sich mit dem Text, Sie prüfen und senden selbst.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="streifen"></div>
+  <span>Autohaus Frisch · DaiL GmbH · Kundenplattform Fahrzeugstatus</span>
+  <span>Quellen: DA-Export autohaus-frisch-spark 06.11.2026 · Hackathon Damage Intelligence (wolf-day-damage) · Higgsfield 3D-Jobs 06.11.2026</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
