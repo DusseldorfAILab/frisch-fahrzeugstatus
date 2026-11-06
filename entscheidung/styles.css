@@ -376,7 +376,8 @@ footer .streifen { width: 100%; height: 6px; background: linear-gradient(90deg, 
 
 /* ---------- Mobil: Kundenseite zuerst, Vorschau als Vollbild ---------- */
 @media (max-width: 1100px) {
-  .vorschau-bereich { display: flex; flex-direction: column; }
+  .vorschau-bereich { display: flex; flex-direction: column; align-items: stretch; }
+  #entscheidungen { width: 100%; min-width: 0; }
   .vorschau-sticky { order: -1; position: static; }
   .handy { width: 100%; max-width: 420px; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
   .handy .notch { display: none; }
