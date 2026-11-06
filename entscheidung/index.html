@@ -35,7 +35,7 @@
     <a href="#kanal" data-nav="kanal">5 · Kommunikation</a>
     <a href="#design" data-nav="design">6 · Gestaltung</a>
     <a href="#zusammenfassung" data-nav="zusammenfassung">Auswahl senden</a>
-    <i id="nav-stand">0 von 6 entschieden</i>
+    <i id="nav-stand">0 von 6 entschieden</i><i id="nav-speicher" class="speicher"></i>
   </div>
 </nav>
 
@@ -46,7 +46,7 @@
   <p class="hero-stand">So funktioniert diese Seite: Oben rechts sehen Sie das Handy eines Beispielkunden. Jede Auswahl unten verändert diese Vorschau sofort. Zu jedem Punkt gibt es Kommentarfelder für alles, was die Auswahl nicht abdeckt. Am Ende steht Ihre Auswahl als Text zum Kopieren oder als E-Mail an uns. Ihre Eingaben bleiben in diesem Browser gespeichert, Sie können jederzeit unterbrechen.</p>
   <div class="hero-facts">
     <span><b>255</b>Fahrzeuge aktuell im Haus (DA, 06.11.)</span>
-    <span><b>31</b>interne DA-Status im Einsatz</span>
+    <span><b>12</b>Kundenstatus im DA (Gruppe 20.0.0)</span>
     <span><b>18</b>3D-Modelle im Test erzeugt</span>
     <span><b>6</b>Entscheidungen</span>
   </div>
@@ -147,37 +147,28 @@
 
 <section class="section" id="status">
   <div class="section-heading">
-    <div><span class="nr">Entscheidung 3 von 6</span><h2>Vom DA-Status zur Kundenstufe</h2></div>
+    <div><span class="nr">Entscheidung 3 von 6</span><h2>Ihre zwölf Kundenstatus</h2></div>
     <div>
-      <p class="frage">Welche Ihrer 31 internen Status soll der Kunde sehen, und unter welchem Namen?</p>
-      <p>Ihre DA-Status sind interne Arbeitsanweisungen ("Mech/Reifen Anfrage KV erstellen", "Antwort Versicherer/GA/Leasing/Kunde fehlt"). Der Kunde braucht weniger und klarere Stufen. Unten steht unser Vorschlag: jeder interne Status wird einer Kundenstufe zugeordnet oder bleibt verborgen. Sie können jede Zuordnung ändern und die Kundentexte umschreiben. Die Zahlen rechts zeigen, wie viele offene Vorgänge heute in diesem Status stehen.</p>
+      <p class="frage">Im DA gibt es die Statusgruppe "20.0.0 Kundenstati" bereits. Die Kundenseite liest sie direkt.</p>
+      <p>Zwölf Status, angelegt im November 2024, von 13 Workflows automatisch gesetzt: bei 253 der 255 Fahrzeuge im Haus steht einer davon. Jeder Vorgang trägt genau einen. Unten die zwölf in DA-Reihenfolge mit DA-Farbe und der Zahl offener Vorgänge. Tippen Sie einen Status an, die Vorschau springt dorthin und zeigt die Animation, die der Kunde sehen würde. Für jeden Status entscheiden Sie: sichtbar, Nachricht an den Kunden, Text, Animation.</p>
+      <p class="fact">Quelle: DA-API state_categories 94, states 1455 bis 1465 und 1656, Workflows 20.0.1 bis 10.0.11. Offene Vorgänge je Status aus dem DA-Export vom 06.11.2026.</p>
     </div>
   </div>
   <div class="frage-block">
-    <h3>3a · Anzahl der Kundenstufen</h3>
-    <div class="optionen schmal" data-frage="status_stufen"></div>
+    <h3>3a · Statusreise</h3>
+    <p>Reihenfolge wie im DA. Der markierte Status ist der, den die Vorschau gerade zeigt.</p>
+    <div class="reise-steuer"><button type="button" class="chip" id="btn-vorfuehrung">Alle zwölf vorführen</button><span class="lbl" id="vorfuehrung-stand"></span></div>
+    <ol class="reise" id="reise"></ol>
   </div>
   <div class="frage-block">
-    <h3>3b · Zuordnung</h3>
-    <p>Links der interne Status, rechts die Kundenstufe. "Verborgen" heißt: dieser Statuswechsel löst keine Änderung auf der Kundenseite aus.</p>
-    <div class="stufen-leiste" id="stufen-leiste"></div>
-    <div class="tabelle-scroll">
-      <table class="zuordnung" id="zuordnung">
-        <thead><tr><th>Interner DA-Status</th><th class="zahl">Offen</th><th>Kundenstufe</th><th>Text auf der Kundenseite</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <h3>3b · Quelle des Kundenstatus</h3>
+    <div class="optionen" data-frage="status_quelle"></div>
   </div>
   <div class="frage-block">
-    <h3>3c · Wartezeiten auf Dritte</h3>
-    <p>Bei "Warte auf Freigabe" oder "Antwort Versicherer fehlt" liegt der Ball nicht bei Ihnen. Soll der Kunde das erfahren?</p>
-    <div class="optionen" data-frage="status_dritte"></div>
-  </div>
-  <div class="frage-block">
-    <h3>3d · Voraussichtliche Fertigstellung</h3>
+    <h3>3c · Voraussichtliche Fertigstellung</h3>
     <div class="optionen" data-frage="status_eta"></div>
   </div>
-  <div class="kommentar"><label for="k_status">Ihre Anmerkung zu Entscheidung 3</label><textarea id="k_status" data-kommentar="status" placeholder="Zum Beispiel: Folgetermine getrennt anzeigen."></textarea></div>
+  <div class="kommentar"><label for="k_status">Ihre Anmerkung zu Entscheidung 3</label><textarea id="k_status" data-kommentar="status" placeholder="Zum Beispiel: Status 'Wir konnten Sie nicht erreichen' nur per SMS, nicht auf der Seite."></textarea></div>
 </section>
 
 <section class="section" id="live">
@@ -279,8 +270,9 @@
 
 </div><!-- /entscheidungen -->
 
-<aside class="vorschau-sticky" aria-label="Vorschau der Kundenseite">
-  <p class="lbl"><span>Vorschau Kundenseite</span><span id="vorschau-kanal-lbl">Link per SMS</span></p>
+<aside class="vorschau-sticky" id="vorschau-aside" aria-label="Vorschau der Kundenseite">
+  <p class="lbl"><span>Vorschau Kundenseite</span><span id="vorschau-kanal-lbl">Link per SMS</span><button type="button" class="schliessen" id="btn-vorschau-zu" aria-label="Vorschau schließen">Schließen</button></p>
+  <div class="mini-reise" id="mini-reise" aria-label="Status in der Vorschau wechseln"></div>
   <div class="handy">
     <div class="screen" id="screen" data-thema="frisch" data-schrift="haus">
       <div class="notch"><i></i></div>
@@ -289,13 +281,14 @@
   </div>
 </aside>
 </div><!-- /vorschau-bereich -->
+<button type="button" class="vorschau-knopf" id="btn-vorschau-auf"><i></i><span>Kundenseite ansehen</span></button>
 
 <section class="section" id="zusammenfassung">
   <div class="section-heading">
     <div><span class="nr">Abschluss</span><h2>Ihre Auswahl</h2></div>
     <div>
-      <p class="frage">Alles, was Sie oben entschieden haben, steht hier als Text.</p>
-      <p>Kopieren Sie den Text in eine E-Mail an uns, oder nutzen Sie den E-Mail-Knopf. Offene Punkte sind markiert. Sie können die Seite später wieder öffnen, Ihre Auswahl bleibt in diesem Browser erhalten.</p>
+      <p class="frage">Alles, was Sie oben entschieden haben, steht hier als Text und wird automatisch gespeichert.</p>
+      <p>Jede Änderung wird innerhalb weniger Sekunden auf unserem Server gesichert, Sie müssen nichts verschicken. Wenn Sie fertig sind, drücken Sie "Auswahl abschicken", dann wissen wir, dass wir damit arbeiten können. Sie können die Seite jederzeit wieder öffnen und nachbessern.</p>
     </div>
   </div>
   <div class="zusammenfassung">
@@ -307,12 +300,13 @@
       <div class="feld"><label for="name">Ihr Name</label><input id="name" type="text" placeholder="Werner Frisch" autocomplete="name"></div>
       <div class="kommentar"><label for="k_allgemein">Was sonst noch wichtig ist</label><textarea id="k_allgemein" data-kommentar="allgemein" placeholder="Alles, was keine der sechs Fragen abdeckt."></textarea></div>
       <div class="aktionen">
-        <button class="btn" id="btn-mail" type="button">Auswahl per E-Mail senden</button>
+        <button class="btn" id="btn-abschicken" type="button">Auswahl abschicken</button>
         <button class="btn zweit" id="btn-kopieren" type="button">Text kopieren</button>
         <button class="btn zweit" id="btn-reset" type="button">Auf Vorschlag zurücksetzen</button>
       </div>
       <p class="status-zeile" id="status-zeile"></p>
-      <p class="fact">Die E-Mail geht an y.bekri@dail.info. Es wird nichts automatisch übertragen: Ihr Mailprogramm öffnet sich mit dem Text, Sie prüfen und senden selbst.</p>
+      <div class="bestaetigung" id="bestaetigung" hidden><b>Danke, Ihre Auswahl ist bei uns.</b><span id="bestaetigung-text"></span></div>
+      <p class="fact">Gespeichert wird auf einem Server von DaiL (Vercel, Frankfurt/USA-Ost), nur für dieses Projekt. Keine E-Mail nötig.</p>
     </div>
   </div>
 </section>
